@@ -1,4 +1,4 @@
-package com.kyumin.erpsystem;
+package com.kyumin.erpsystem.item;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,16 +10,16 @@ public class itemController {
 	
 	@RequestMapping(value = "/use", method = RequestMethod.GET)
 	public String use() {
-		return "/item/itemAdd";
+		return "/item/itemUse";
 	}
 	
-	@RequestMapping(value = "/machine", method = RequestMethod.GET)
-	public String machine() {
+	@RequestMapping(value = "/machineList", method = RequestMethod.GET)
+	public String machineList() {
 		return "/item/machine";
 	}
 	
-	@RequestMapping(value = "/totalInventory", method = RequestMethod.GET)
-	public String totalInventory() {
+	@RequestMapping(value = "/totalList", method = RequestMethod.GET)
+	public String totalList() {
 		return "/item/totalInventory";
 	}
 }

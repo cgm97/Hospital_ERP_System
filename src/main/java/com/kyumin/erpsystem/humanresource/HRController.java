@@ -1,25 +1,25 @@
-package com.kyumin.erpsystem;
+package com.kyumin.erpsystem.humanresource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/hr")
+@RequestMapping("/humanResource")
 public class HRController {
 	
-	@GetMapping("/employeeList")
-	public String 직원목록() {
+	@GetMapping("/list")
+	public String list() {
 		return "/hr/employeeList";
 	}
 	
 	@GetMapping("/schedule")
-	public String 근태관리() {
+	public String schedule() {
 		return "/hr/schedule";
 	}
 	
 	@GetMapping("/salary")
-	public String 급여관리() {
+	public String salary() {
 		return "/hr/salary";
 	}
 }
