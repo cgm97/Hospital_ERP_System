@@ -1,19 +1,19 @@
 package com.kyumin.erpsystem.patient;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/patient")
 public class PatientController {
 	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	@GetMapping("/add")
 	public String add() {
 		return "/patient/patientAdd";
 	}
-	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+
+	@GetMapping("/list")
 	public String list() {
 		return "/patient/patientList";
 	}
