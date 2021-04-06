@@ -45,7 +45,23 @@
                     </div>
                 </div>
             </li>
-
+			
+			<!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrder"
+                    aria-expanded="true" aria-controls="collapseOrder">
+                    <i class="fas fa-fw fa-cart-plus"></i>
+                    <span>발주관리</span>
+                </a>
+                <div id="collapseOrder" class="collapse" aria-labelledby="collapseOrder" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Order:</h6>
+                        <a class="collapse-item" href="<c:url value="/order/add"/>">주문 신청</a>
+                        <a class="collapse-item" href="<c:url value="/order/list"/>">주문 내역 조회</a>
+                    </div>
+                </div>
+            </li>
+            
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHR"
