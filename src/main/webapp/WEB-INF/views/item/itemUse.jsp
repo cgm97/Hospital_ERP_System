@@ -16,8 +16,17 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
-             	<h1>사용 등록 처리</h1>
+            <div id="content" style="padding-left: 10px">
+             	<h1>사용 등록 처리</h1><br>
+             	<div>
+             		<form action="<c:url value="/item/use.do"/>" method="POST">
+             			<input type="text" id="drugName" name="drugName" placeholder="약품 이름" /><button id="check" type="button" onclick="search();">검색</button><br><br>
+	             		<label>의약품 코드 : ${code}</label><br><input type="hidden" name="drugCode" value="112" />
+	             		<label>의약품 규격 : ${code}</label><br><input type="hidden" name="drugType" value="131" />
+	             		<label>사용 수량    : </label><input type="number" id="useCount" name="useCount" />개<br>
+	             		<input type="submit" value="사용 처리 등록" />
+             		</form>
+            	</div>
             </div>
             <!-- End of Main Content -->
 
