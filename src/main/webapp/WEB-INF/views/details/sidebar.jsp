@@ -40,12 +40,28 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Trade:</h6>
                         <a class="collapse-item" href="<c:url value="/item/use"/>">약품 사용 등록</a>
-                        <a class="collapse-item" href="<c:url value="/item/machine"/>">의료 기계 현황</a>
-                        <a class="collapse-item" href="<c:url value="/item/totalInventory"/>">총 재고 현황</a>
+                        <a class="collapse-item" href="<c:url value="/item/machineList"/>">의료 기계 현황</a>
+                        <a class="collapse-item" href="<c:url value="/item/totalList"/>">총 재고 현황</a>
                     </div>
                 </div>
             </li>
-
+			
+			<!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrder"
+                    aria-expanded="true" aria-controls="collapseOrder">
+                    <i class="fas fa-fw fa-cart-plus"></i>
+                    <span>발주관리</span>
+                </a>
+                <div id="collapseOrder" class="collapse" aria-labelledby="collapseOrder" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Order:</h6>
+                        <a class="collapse-item" href="<c:url value="/order/add"/>">주문 신청</a>
+                        <a class="collapse-item" href="<c:url value="/order/list"/>">주문 내역 조회</a>
+                    </div>
+                </div>
+            </li>
+            
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHR"
@@ -57,30 +73,30 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Human Resources:</h6>
-                        <a class="collapse-item" href="<c:url value="/hr/employeeList"/>">직원 목록</a>
-                        <a class="collapse-item" href="<c:url value="/hr/schedule"/>">근태 관리</a>
-                        <a class="collapse-item" href="<c:url value="/hr/salary"/>">급여 관리</a>
+                        <a class="collapse-item" href="<c:url value="/humanResource/list"/>">직원 목록</a>
+                        <a class="collapse-item" href="<c:url value="/humanResource/schedule"/>">근태 관리</a>
+                        <a class="collapse-item" href="<c:url value="/humanResource/salary"/>">급여 관리</a>
                     </div>
                 </div>
             </li>
 
              <!-- Nav Item - Utilities Collapse Menu -->
              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCTM"
-                    aria-expanded="true" aria-controls="collapseHR">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePatient"
+                    aria-expanded="true" aria-controls="collapsePatient">
                     <i class="fas fa-fw fa-users"></i>
                     <span>환자관리</span>
                 </a>
-                <div id="collapseCTM" class="collapse" aria-labelledby="collapseCTM"
+                <div id="collapsePatient" class="collapse" aria-labelledby="collapsePatient"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Customer:</h6>
-                        <a class="collapse-item" href="#">환자 등록</a>
-                        <a class="collapse-item" href="#">환자 목록</a>
+                        <h6 class="collapse-header">PATIENT:</h6>
+                        <a class="collapse-item" href="<c:url value="/patient/add"/>">환자 등록</a>
+                        <a class="collapse-item" href="<c:url value="/patient/list"/>">환자 목록</a>
                     </div>
                 </div>
             </li>
-
+			
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -99,8 +115,8 @@
                 <div id="collapseEMR" class="collapse" aria-labelledby="collapseEMR" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Chart:</h6>
-                        <a class="collapse-item" href="#">차트 생성</a>
-                        <a class="collapse-item" href="#">차트 조회</a>
+                        <a class="collapse-item" href="<c:url value="/emr/add"/>">차트 생성</a>
+                        <a class="collapse-item" href="<c:url value="/emr/list"/>">차트 조회</a>
                     </div>
                 </div>
             </li>

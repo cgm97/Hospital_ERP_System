@@ -16,41 +16,8 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content" style="padding-left: 10px">
-             	<h1>총 현황</h1>
-             	<table>
-             		<thead>
-					    <tr>
-					      <th scope="col">의약품 명</th>
-					      <th scope="col">고유 코드</th>
-					      <th scope="col">규격</th>
-					      <th scope="col">총 합계</th>
-					      <th scope="col">부서A</th>
-					      <th scope="col">부서B</th>
-					      <th scope="col">부서C</th>
-					    </tr>
-			    	</thead>
-					<tbody>
-						<tr>
-							<th scope="row">000001</th>
-						    <td>감기약</td>
-						    <td>10mg</td>
-						    <td>100</td>
-						    <td>50</td>
-						    <td>50</td>
-						    <td>0</td>
-						</tr>
-						<tr>
-							<th scope="row">000001</th>
-						    <td>감기약</td>
-						    <td>10mg</td>
-						    <td>100</td>
-						    <td>50</td>
-						    <td>50</td>
-						    <td>0</td>
-						</tr>
-					</tbody>
-             	</table>
+            <div id="content">
+             	<h1>Emr 등록</h1>
             </div>
             <!-- End of Main Content -->
 
