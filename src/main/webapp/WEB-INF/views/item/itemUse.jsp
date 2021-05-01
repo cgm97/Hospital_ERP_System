@@ -11,7 +11,7 @@
 
         <!-- Sidebar -->
        	<jsp:include page="/WEB-INF/views/details/sidebar.jsp" />
-
+		
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -20,10 +20,10 @@
              	<h1>사용 등록 처리</h1><br>
              	<div>
              		<form action="<c:url value="/item/use.do"/>" method="POST">
-             			<input type="text" id="drugName" name="drugName" placeholder="약품 이름" /><button id="check" type="button" onclick="search();">검색</button><br><br>
-	             		<label>의약품 코드 : ${code}</label><br><input type="hidden" name="drugCode" value="112" />
-	             		<label>의약품 규격 : ${code}</label><br><input type="hidden" name="drugType" value="131" />
-	             		<label>사용 수량    : </label><input type="number" id="useCount" name="useCount" />개<br>
+             			<input type="text" id="drugName" name="drugName" placeholder="약품 이름" />
+             			<button id="check" type="button" onclick="drugSearch();">검색</button><br><br>
+	             		<div id="drugInfo" class="drugInfo"></div>             		
+	             		<label>수량    : </label><input type="number" id="useCount" name="useCount" />개<br>
 	             		<input type="submit" value="사용 처리 등록" />
              		</form>
             	</div>
