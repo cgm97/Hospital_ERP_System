@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kyumin.erpsystem.item.domain.itemUse;
+import com.kyumin.erpsystem.item.domain.machineDTO;
 import com.kyumin.erpsystem.item.service.itemService;
 
 @Controller
@@ -35,10 +37,9 @@ public class itemController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		itemUse drugInfo = itemService.findByDrugName(drugName);
 		
-		if (drugInfo.getDrugType() != null) {
+		if (drugInfo != null) {
 			map.put("drugCode", drugInfo.getDrugCode());
 			map.put("drugType", drugInfo.getDrugType());
-			System.out.println("test");
 		}
 		else {
 			map = null;
@@ -56,14 +57,24 @@ public class itemController {
 		// DB 처리 부분만 남음 사용 처리
 		return "/item/itemUse";
 	}
-	
+
+	/* 
+	 * 기계 목록
+	 */
 	@GetMapping("/machineList")
-	public String machineList() {
+	public String machineList(Model model) {
+		model.addAttribute("machineList", itemService.findAllMachineList());
+		// DB 처리 부분만 남음
 		return "/item/machine";
 	}
-
+	
+	/* 
+	 * 악품 목록
+	 */
 	@GetMapping("/totalList")
-	public String totalList() {
+	public String totalList(Model model) {
+		model.addAttribute("inventoryList",itemService.findAllInventoryList());
+		// DB 처리 부분만 남음
 		return "/item/totalInventory";
 	}
 }
