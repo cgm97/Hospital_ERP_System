@@ -31,24 +31,18 @@
 					    </tr>
 			    	</thead>
 					<tbody>
-						<tr>
-							<th scope="row">000001</th>
-						    <td>감기약</td>
-						    <td>10mg</td>
-						    <td>100</td>
-						    <td>50</td>
-						    <td>50</td>
-						    <td>0</td>
-						</tr>
-						<tr>
-							<th scope="row">000001</th>
-						    <td>감기약</td>
-						    <td>10mg</td>
-						    <td>100</td>
-						    <td>50</td>
-						    <td>50</td>
-						    <td>0</td>
-						</tr>
+						<c:forEach var="inventory" items="${inventoryList}">
+							<tr>
+								<th scope="row">${inventory.getName()}</th>
+								<td>${inventory.getCode()}</td>
+								<td>${inventory.getSize()}</td>
+								<td>${inventory.getTotalCount()}</td>
+								<td>${inventory.getDepartmentA()}</td>
+								<td>${inventory.getDepartmentB()}</td>
+								<td>${inventory.getDepartmentC()}</td>
+							</tr>	
+						</c:forEach>
+					</tbody>
 					</tbody>
              	</table>
             </div>

@@ -31,22 +31,16 @@
 					    </tr>
 			    	</thead>
 					<tbody>
-						<tr>
-							<th scope="row">MRI</th>
-						    <td>000001</td>
-						    <td>1층</td>
-						    <td>응급실</td>
-						    <td>2020-02-25</td>
-						    <td>2021-04-09</td>
-						</tr>
-						<tr>
-							<th scope="row">MRI</th>
-						    <td>000001</td>
-						    <td>1층</td>
-						    <td>응급실</td>
-						    <td>2020-02-25</td>
-						    <td>2021-04-09</td>
-						</tr>
+						<c:forEach var="machineList" items="${machineList}">
+							<tr>
+								<th scope="row">${machineList.getName()}</th>
+								<td>${machineList.getCode()}</td>
+								<td>${machineList.getLocation()}</td>
+								<td>${machineList.getDepartment()}</td>
+								<td>${machineList.getBuyDate()}</td>
+								<td>${machineList.getInspectionDate()}</td>
+							</tr>	
+						</c:forEach>
 					</tbody>
              	</table>
             </div>
