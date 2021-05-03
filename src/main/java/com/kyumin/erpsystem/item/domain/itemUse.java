@@ -1,49 +1,58 @@
 package com.kyumin.erpsystem.item.domain;
 
 public class itemUse {
-	private String drugName;
-	private int drugCode;
-	private String drugType;
+	private String name;
+	private int code;
+	private String type;
 	private int useCount;
-
-	public String getDrugName() {
-		return drugName;
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
 	}
-
-	public void setDrugName(String drugName) {
-		this.drugName = drugName;
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public int getDrugCode() {
-		return drugCode;
+	/**
+	 * @return the code
+	 */
+	public int getCode() {
+		return code;
 	}
-
-	public void setDrugCode(int drugCode) {
-		this.drugCode = drugCode;
+	/**
+	 * @param code the code to set
+	 */
+	public void setCode(int code) {
+		this.code = code;
 	}
-
-	public String getDrugType() {
-		return drugType;
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
 	}
-
-	public void setDrugType(String drugType) {
-		this.drugType = drugType;
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
 	}
-
+	/**
+	 * @return the useCount
+	 */
 	public int getUseCount() {
 		return useCount;
 	}
-
+	/**
+	 * @param useCount the useCount to set
+	 */
 	public void setUseCount(int useCount) {
 		this.useCount = useCount;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "itemUse [drugName=" + drugName + ", drugCode=" + drugCode + ", drugType=" + drugType + ", useCount="
-				+ useCount + "]";
-	}
+	
 }

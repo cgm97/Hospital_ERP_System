@@ -1,5 +1,6 @@
 package com.kyumin.erpsystem.item;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +34,13 @@ public class itemController {
 	 */
 	@ResponseBody
 	@PostMapping("/itemSearch")
-	public Map<String,Object> itemSearch(@RequestBody String drugName) {
+	public Map<String,Object> itemSearch(@RequestBody String drugName) throws SQLException {
 		Map<String, Object> map = new HashMap<String, Object>();
 		itemUse drugInfo = itemService.findByDrugName(drugName);
 		
 		if (drugInfo != null) {
-			map.put("drugCode", drugInfo.getDrugCode());
-			map.put("drugType", drugInfo.getDrugType());
+			map.put("code", drugInfo.getCode());
+			map.put("type", drugInfo.getType());
 		}
 		else {
 			map = null;
@@ -72,7 +73,7 @@ public class itemController {
 	 * 악품 목록
 	 */
 	@GetMapping("/totalList")
-	public String totalList(Model model) {
+	public String totalList(Model model) throws SQLException {
 		model.addAttribute("inventoryList",itemService.findAllInventoryList());
 		// DB 처리 부분만 남음
 		return "/item/totalInventory";

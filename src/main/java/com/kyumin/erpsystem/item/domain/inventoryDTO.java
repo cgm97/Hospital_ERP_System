@@ -3,11 +3,9 @@ package com.kyumin.erpsystem.item.domain;
 public class inventoryDTO {
 	public int code;
 	public String name;
-	public String size;
+	public String type;
 	public int totalCount;
-	public int departmentA;
-	public int departmentB;
-	public int departmentC;
+	public String department;
 	/**
 	 * @return the code
 	 */
@@ -33,16 +31,16 @@ public class inventoryDTO {
 		this.name = name;
 	}
 	/**
-	 * @return the size
+	 * @return the type
 	 */
-	public String getSize() {
-		return size;
+	public String getType() {
+		return type;
 	}
 	/**
-	 * @param size the size to set
+	 * @param type the type to set
 	 */
-	public void setSize(String size) {
-		this.size = size;
+	public void setType(String type) {
+		this.type = type;
 	}
 	/**
 	 * @return the totalCount
@@ -57,40 +55,17 @@ public class inventoryDTO {
 		this.totalCount = totalCount;
 	}
 	/**
-	 * @return the departmentA
+	 * @return the department
 	 */
-	public int getDepartmentA() {
-		return departmentA;
+	public String getDepartment() {
+		return department;
 	}
 	/**
-	 * @param departmentA the departmentA to set
+	 * @param department the department to set
 	 */
-	public void setDepartmentA(int departmentA) {
-		this.departmentA = departmentA;
+	public void setDepartment(String department) {
+		this.department = department;
 	}
-	/**
-	 * @return the departmentB
-	 */
-	public int getDepartmentB() {
-		return departmentB;
-	}
-	/**
-	 * @param departmentB the departmentB to set
-	 */
-	public void setDepartmentB(int departmentB) {
-		this.departmentB = departmentB;
-	}
-	/**
-	 * @return the departmentC
-	 */
-	public int getDepartmentC() {
-		return departmentC;
-	}
-	/**
-	 * @param departmentC the departmentC to set
-	 */
-	public void setDepartmentC(int departmentC) {
-		this.departmentC = departmentC;
-	}
+
 	
 }
