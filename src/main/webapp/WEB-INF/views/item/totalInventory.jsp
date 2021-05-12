@@ -25,9 +25,7 @@
 					      <th scope="col">고유 코드</th>
 					      <th scope="col">규격</th>
 					      <th scope="col">총 합계</th>
-					      <th scope="col">부서A</th>
-					      <th scope="col">부서B</th>
-					      <th scope="col">부서C</th>
+					      <th scope="col">부서</th>
 					    </tr>
 			    	</thead>
 					<tbody>
@@ -35,11 +33,9 @@
 							<tr>
 								<th scope="row">${inventory.getName()}</th>
 								<td>${inventory.getCode()}</td>
-								<td>${inventory.getSize()}</td>
+								<td>${inventory.getType()}</td>
 								<td>${inventory.getTotalCount()}</td>
-								<td>${inventory.getDepartmentA()}</td>
-								<td>${inventory.getDepartmentB()}</td>
-								<td>${inventory.getDepartmentC()}</td>
+								<td>${inventory.getDepartment()}</td>
 							</tr>	
 						</c:forEach>
 					</tbody>

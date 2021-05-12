@@ -1,25 +1,29 @@
 package com.kyumin.erpsystem.item.service;
 
+import java.sql.SQLException;
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kyumin.erpsystem.item.domain.inventoryDTO;
 import com.kyumin.erpsystem.item.domain.itemUse;
 import com.kyumin.erpsystem.item.domain.machineDTO;
+import com.kyumin.erpsystem.item.repository.ItemRepository;
 
 @Service
 public class itemService {
 
-	public void usedItem(itemUse item) {
-		System.out.print(item);
+	@Autowired
+	private ItemRepository dao;
+	
+	public int usedItem(itemUse item) throws SQLException {
+		return dao.useItem(item);
 	}
 
-	public itemUse findByDrugName(String drugName) {
-		itemUse info = new itemUse();
-		info.setDrugCode(4765);
-		info.setDrugType("50ml");
-		return info;
+	public itemUse findByDrugName(String drugName) throws SQLException {
+
+		return dao.findByDrugName(drugName);
 	}
 
 	public List<machineDTO> findAllMachineList() {
@@ -38,21 +42,21 @@ public class itemService {
 		return machineList;
 	}
 
-	public List<inventoryDTO> findAllInventoryList() {
-		List<inventoryDTO> list = new ArrayList<inventoryDTO>();
-		inventoryDTO info = new inventoryDTO();
-		for (int i=0; i<3; i++) {
-			info.setCode(231);
-			info.setName("수면제");
-			info.setSize("20ml");
-			info.setTotalCount(200);
-			info.setDepartmentA(10);
-			info.setDepartmentB(90);
-			info.setDepartmentC(100);
-			list.add(info);
-		}
+	public List<inventoryDTO> findAllInventoryList() throws SQLException {
+//		List<inventoryDTO> list = new ArrayList<inventoryDTO>();
+//		inventoryDTO info = new inventoryDTO();
+//		for (int i=0; i<3; i++) {
+//			info.setCode(231);
+//			info.setName("수면제");
+//			info.setType("20ml");
+//			info.setTotalCount(200);
+//			info.setDepartmentA(10);
+//			info.setDepartmentB(90);
+//			info.setDepartmentC(100);
+//			list.add(info);
+//		}
 
-		return list;
+		return dao.findAllInventoryList();
 	}
 	
 }
