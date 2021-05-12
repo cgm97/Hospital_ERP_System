@@ -17,8 +17,8 @@ public class itemService {
 	@Autowired
 	private ItemRepository dao;
 	
-	public void usedItem(itemUse item) {
-		System.out.print(item);
+	public int usedItem(itemUse item) throws SQLException {
+		return dao.useItem(item);
 	}
 
 	public itemUse findByDrugName(String drugName) throws SQLException {

@@ -10,5 +10,6 @@ public interface ItemRepository {
 
 	List<inventoryDTO> findAllInventoryList() throws SQLException;
 	itemUse findByDrugName(String drugName) throws SQLException;
+	int useItem(itemUse item) throws SQLException;
 
 }

@@ -53,9 +53,9 @@ public class itemController {
 	 * 약품 사용 처리
 	 */
 	@PostMapping("/use.do")
-	public String useAction(itemUse item) {
+	public String useAction(itemUse item) throws SQLException {
 		itemService.usedItem(item);
-		// DB 처리 부분만 남음 사용 처리
+
 		return "/item/itemUse";
 	}
 
@@ -75,7 +75,7 @@ public class itemController {
 	@GetMapping("/totalList")
 	public String totalList(Model model) throws SQLException {
 		model.addAttribute("inventoryList",itemService.findAllInventoryList());
-		// DB 처리 부분만 남음
+
 		return "/item/totalInventory";
 	}
 }
