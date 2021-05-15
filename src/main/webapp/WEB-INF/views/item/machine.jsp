@@ -6,7 +6,7 @@
 <jsp:include page="/WEB-INF/views/details/headTag.jsp" />
 
 <body id="page-top">
-	
+	<script src='<c:url value="/js/itemAjax.js" />'></script>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
