@@ -10,6 +10,8 @@ public class order {
 	private int totalCount;
 	private String wantedDate;
 	private String applicationDate;
+	private String completeDate;
+	private int state;
 	/**
 	 * @return the name
 	 */
@@ -118,6 +120,29 @@ public class order {
 	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
 	}
-	
+	/**
+	 * @return the state
+	 */
+	public int getState() {
+		return state;
+	}
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(int state) {
+		this.state = state;
+	}
+	/**
+	 * @return the completeDate
+	 */
+	public String getCompleteDate() {
+		return completeDate;
+	}
+	/**
+	 * @param completeDate the completeDate to set
+	 */
+	public void setCompleteDate(String completeDate) {
+		this.completeDate = completeDate;
+	}
 	
 }
