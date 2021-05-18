@@ -1,7 +1,9 @@
 package com.kyumin.erpsystem.order;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,7 +69,22 @@ public class OrderController {
 		model.addAttribute("pageMaker", pageMaker);
 		return "/order/orderList";
 	}
-
+	
+	/* 
+	 * 졍렬 발주 리스트 목록 
+	 */
+	@ResponseBody
+	@GetMapping("/listOrderBy")
+	public List<order> listOrderBy(@RequestParam String orderBy) throws SQLException {
+		List<order> orderByList = new ArrayList<order>();
+		System.out.println(orderBy);
+		
+		orderByList=orderService.findWaitOrderList(orderBy);
+		
+		
+		return orderByList;		
+	}
+	
 	/*
 	 * 물품검색
 	 */

@@ -30,4 +30,11 @@ public interface orderRepository {
 	
 	// 페이징을 위한 발주 목록 갯수
 	int getOrderListCnt() throws SQLException;
+
+	// 미처리된 발주 목록 갯수
+	int getOrderListCnt(int waitOrderCount) throws SQLException;
+	
+	// 미처리된 발주 목록
+	List<order> findWaitOrderList(String orderBy) throws SQLException;
+
 }

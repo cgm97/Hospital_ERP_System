@@ -70,30 +70,6 @@ public class orderJDBC implements orderRepository {
 
 	@Override
 	public List<order> findAllOrderList(Criteria cri) throws SQLException {
-//		String sql = "select * from orderitem";
-//		conn = dataSource.getConnection();
-//		
-//		pstmt = conn.prepareStatement(sql);
-//		rs = pstmt.executeQuery();
-//		
-//		List<order> order = new ArrayList<order>();
-//		while (rs.next()) {
-//			order dto = new order();
-//			dto.setOrderNo(rs.getInt("orderNo"));
-//			dto.setDepartment(rs.getString("department"));
-//			dto.setCode(rs.getInt("CODE"));
-//			dto.setName(rs.getString("NAME"));
-//			dto.setType(rs.getString("TYPE"));
-//			dto.setOrderCount(rs.getInt("orderCount"));
-//			dto.setApplicationDate(rs.getString("applicationDate"));
-//			dto.setWantedDate(rs.getString("wantedDate"));
-//			dto.setCompleteDate(rs.getString("completeDate"));
-//			dto.setState(rs.getInt("STATE"));
-//			order.add(dto);
-//		}
-//		conn.close();
-//		pstmt.close();
-//		return order;
 		String sql = "select orderno, code, name, type, department, wanteddate, applicationdate, completedate, state , ordercount "
 					+"from ("
 					+"select orderno, code, name, type, department, wanteddate, applicationdate, completedate, state , ordercount, "
@@ -126,6 +102,7 @@ public class orderJDBC implements orderRepository {
 		}
 		conn.close();
 		pstmt.close();
+		rs.close();
 		return order;
 	}
 
@@ -202,7 +179,7 @@ public class orderJDBC implements orderRepository {
 		return result;
 	}
 
-	@Override
+	@Override // 발주 전체 갯수
 	public int getOrderListCnt() throws SQLException {
 		int cnt = 0;
 		String sql = "select count(*) AS totalcount from orderItem";		
@@ -216,6 +193,66 @@ public class orderJDBC implements orderRepository {
 		conn.close();
 		pstmt.close();
 		return cnt;
+	}
+
+	@Override // 미처리된 발주 갯수
+	public int getOrderListCnt(int waitOrderCount) throws SQLException {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		String sql = "select count(*) AS waitOrderCount from orderItem where state=?";		
+		conn = dataSource.getConnection();
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1,waitOrderCount);
+		
+		rs = pstmt.executeQuery();
+		if (rs.next()) {
+			cnt = (rs.getInt("waitOrderCount"));
+		}
+		
+		conn.close();
+		pstmt.close();
+		return cnt;
+	}
+
+	@Override
+	public List<order> findWaitOrderList(String orderBy) throws SQLException {
+	String sql = "select * from orderitem order by state " + orderBy;
+//	String sql = "select orderno, code, name, type, department, wanteddate, applicationdate, completedate, state , ordercount "
+//			+"from ("
+//			+"select orderno, code, name, type, department, wanteddate, applicationdate, completedate, state , ordercount, "
+//			+"row_number() over(order by state "+orderBy+") as rNum " 
+//			+"from orderItem "
+//			+")orderlist "
+//			+"where rNum between ? and ? "
+//			+"order by state " + orderBy;
+	conn = dataSource.getConnection();
+	
+//	pstmt.setInt(1, cri.getRowStart());
+//	pstmt.setInt(2, cri.getRowEnd());
+	
+	pstmt = conn.prepareStatement(sql);
+
+	rs = pstmt.executeQuery();
+	
+	List<order> orderByList = new ArrayList<order>();
+	while (rs.next()) {
+		order dto = new order();
+		dto.setOrderNo(rs.getInt("orderNo"));
+		dto.setDepartment(rs.getString("department"));
+		dto.setCode(rs.getInt("CODE"));
+		dto.setName(rs.getString("NAME"));
+		dto.setType(rs.getString("TYPE"));
+		dto.setOrderCount(rs.getInt("orderCount"));
+		dto.setApplicationDate(rs.getString("applicationDate"));
+		dto.setWantedDate(rs.getString("wantedDate"));
+		dto.setCompleteDate(rs.getString("completeDate"));
+		dto.setState(rs.getInt("STATE"));
+		orderByList.add(dto);
+	}
+	conn.close();
+	pstmt.close();
+	
+	return orderByList;
 	}
 
 }

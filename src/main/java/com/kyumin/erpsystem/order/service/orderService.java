@@ -53,4 +53,16 @@ public class orderService {
 	public int getOrderListCnt() throws SQLException {
 		return dao.getOrderListCnt();
 	}
+	
+	// 미처리 발주 리스트 갯수
+	public Object getOrderListCnt(int waitOrderCount) throws SQLException {
+		// TODO Auto-generated method stub
+		return dao.getOrderListCnt(waitOrderCount);
+	}
+	
+	// 미처리 발주 리스트
+	public List<order> findWaitOrderList(String orderBy) throws SQLException {
+		// TODO Auto-generated method stub
+		return dao.findWaitOrderList(orderBy);
+	}
 }

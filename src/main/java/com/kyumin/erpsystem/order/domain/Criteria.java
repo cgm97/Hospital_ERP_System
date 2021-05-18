@@ -1,7 +1,5 @@
 package com.kyumin.erpsystem.order.domain;
 
-import java.util.List;
-
 public class Criteria {
 		private int page;
 		private int perPageNum;
@@ -10,7 +8,7 @@ public class Criteria {
 		
 		public Criteria() {
 			this.page = 1;
-			this.perPageNum = 5;
+			this.perPageNum = 10;
 		}
 		
 		public void setPage(int page) {
