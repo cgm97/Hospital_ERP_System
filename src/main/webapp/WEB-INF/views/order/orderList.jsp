@@ -21,7 +21,7 @@
             <!-- Main Content -->
             <div id="content">
              	<h1>주문 내역</h1>
-             	<table>
+             	<table id="orderList">
              		<thead>
 					    <tr>
 					      <th scope="col">신청 부서</th>
@@ -31,10 +31,15 @@
 					      <th scope="col">신청 날짜</th>
 					      <th scope="col">희망 날짜</th>
 					      <th scope="col">처리 날짜</th>
-					      <th scope="col">처리 상태</th>
+					      <th scope="col" >결제 상태
+					      	<span style='vertical-align: middle;' id='icon'>
+					      		<i id="upIcon" class="fas fa-sort-up" onclick="orderBy('asc');"></i>	
+					      		<i id="downIcon" class="fas fa-sort-down" onclick="orderBy('desc');"></i>				      					      						      	
+					      	</span>
+					      </th>
 					    </tr>
 			    	</thead>
-					<tbody>
+					<tbody id="tbody">
 						<c:forEach var="orderList" items="${orderList}">
 							<tr>
 								<th scope="row">${orderList.getDepartment()}</th>
@@ -61,7 +66,7 @@
 					</tbody>
              	</table>
              	<div>
-				  <ul>
+				  <ul id="paging">
 				    <c:if test="${pageMaker.prev}">
 				    	<li><a href="list${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
 				    </c:if> 
