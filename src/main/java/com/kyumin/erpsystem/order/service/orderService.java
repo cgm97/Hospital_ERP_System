@@ -2,11 +2,9 @@ package com.kyumin.erpsystem.order.service;
 
 import java.sql.SQLException;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.kyumin.erpsystem.order.domain.Criteria;
+import com.kyumin.erpsystem.utility.*;
 import com.kyumin.erpsystem.order.domain.order;
 import com.kyumin.erpsystem.order.repository.orderRepository;
 
@@ -61,8 +59,8 @@ public class orderService {
 	}
 	
 	// 미처리 발주 리스트
-	public List<order> findWaitOrderList(String orderBy) throws SQLException {
+	public List<order> findOrderByList(String orderBy) throws SQLException {
 		// TODO Auto-generated method stub
-		return dao.findWaitOrderList(orderBy);
+		return dao.findOrderByList(orderBy);
 	}
 }

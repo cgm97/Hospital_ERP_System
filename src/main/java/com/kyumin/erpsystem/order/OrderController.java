@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.kyumin.erpsystem.order.domain.Criteria;
-import com.kyumin.erpsystem.order.domain.PageMaker;
+import com.kyumin.erpsystem.utility.*;
 import com.kyumin.erpsystem.order.domain.order;
 import com.kyumin.erpsystem.order.service.orderService;
 
@@ -76,11 +74,8 @@ public class OrderController {
 	@ResponseBody
 	@GetMapping("/listOrderBy")
 	public List<order> listOrderBy(@RequestParam String orderBy) throws SQLException {
-		List<order> orderByList = new ArrayList<order>();
-		System.out.println(orderBy);
-		
-		orderByList=orderService.findWaitOrderList(orderBy);
-		
+		List<order> orderByList = new ArrayList<order>();		
+		orderByList=orderService.findOrderByList(orderBy);
 		
 		return orderByList;		
 	}

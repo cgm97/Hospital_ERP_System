@@ -1,4 +1,4 @@
-package com.kyumin.erpsystem.order.domain;
+package com.kyumin.erpsystem.utility;
 
 public class Criteria {
 		private int page;

@@ -2,8 +2,7 @@ package com.kyumin.erpsystem.order.repository;
 
 import java.sql.SQLException;
 import java.util.List;
-
-import com.kyumin.erpsystem.order.domain.Criteria;
+import com.kyumin.erpsystem.utility.*;
 import com.kyumin.erpsystem.order.domain.order;
 
 public interface orderRepository {
@@ -35,6 +34,6 @@ public interface orderRepository {
 	int getOrderListCnt(int waitOrderCount) throws SQLException;
 	
 	// 미처리된 발주 목록
-	List<order> findWaitOrderList(String orderBy) throws SQLException;
+	List<order> findOrderByList(String orderBy) throws SQLException;
 
 }

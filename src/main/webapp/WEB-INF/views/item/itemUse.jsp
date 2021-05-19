@@ -20,7 +20,7 @@
              	<h1>사용 등록 처리</h1><br>
              	<div>
              		<form action="<c:url value="/item/use.do"/>" method="POST" onsubmit="return itemUseSubmit();">
-             			<input type="text" id="name" name="name" placeholder="약품 이름" />
+             			<input type="text" id="name" name="name" onkeyup="drugSearch();" placeholder="약품 이름" />
              			<button id="check" type="button" onclick="drugSearch();">검색</button><br><br>
 	             		<div id="drugInfo" class="drugInfo"></div>             		
 	             		<label>수량    : </label><input type="number" id="useCount" name="useCount" />개<br>

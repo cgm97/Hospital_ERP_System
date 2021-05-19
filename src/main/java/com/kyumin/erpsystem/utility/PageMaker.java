@@ -1,4 +1,4 @@
-package com.kyumin.erpsystem.order.domain;
+package com.kyumin.erpsystem.utility;
 
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;

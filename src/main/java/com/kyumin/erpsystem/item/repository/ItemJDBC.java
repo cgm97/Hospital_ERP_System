@@ -100,11 +100,11 @@ public class ItemJDBC implements ItemRepository {
 
 	@Override
 	public itemUse findByDrugName(String drugName) throws SQLException {
-		String sql = "select * from ITEM WHERE NAME=?";
+		String sql = "select * from ITEM WHERE NAME LIKE ?";
 		conn = dataSource.getConnection();
 		
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, drugName);
+		pstmt.setString(1, "%" + drugName + "%");
 		rs = pstmt.executeQuery();
 		
 		itemUse dto = new itemUse();

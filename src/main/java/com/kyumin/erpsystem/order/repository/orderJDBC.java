@@ -10,8 +10,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-
-import com.kyumin.erpsystem.order.domain.Criteria;
+import com.kyumin.erpsystem.utility.*;
 import com.kyumin.erpsystem.order.domain.order;
 
 @Repository
@@ -215,7 +214,7 @@ public class orderJDBC implements orderRepository {
 	}
 
 	@Override
-	public List<order> findWaitOrderList(String orderBy) throws SQLException {
+	public List<order> findOrderByList(String orderBy) throws SQLException {
 	String sql = "select * from orderitem order by state " + orderBy;
 //	String sql = "select orderno, code, name, type, department, wanteddate, applicationdate, completedate, state , ordercount "
 //			+"from ("

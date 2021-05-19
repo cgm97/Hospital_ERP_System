@@ -41,6 +41,7 @@ public class itemController {
 		if (drugInfo != null) {
 			map.put("code", drugInfo.getCode());
 			map.put("type", drugInfo.getType());
+			map.put("name", drugInfo.getName());
 		}
 		else {
 			map = null;
