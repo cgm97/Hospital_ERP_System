@@ -19,9 +19,11 @@
 	 </div>
 	 <div>
 	 	<form id="memberInfo">
-
+			<label>소속 부서  : </label><input type="text" id="department" name="department" value="${memberInfo.getDepartment()}" /><br>
+			<label>직급  : </label><input type="text" id="department" name="department" value="${memberInfo.getRank()}" /><br>
+	 		<label>연락처  : </label><input type="text" id="department" name="department" value="${memberInfo.getPhone()}" /><br>
 	 	</form>
-	 		<input type= "button" value="저장" onclick="send_save()"/>
+	 		<input type= "button" value="수정" onclick="updateInfo();"/>
 	 </div>
 </body>
 </html>

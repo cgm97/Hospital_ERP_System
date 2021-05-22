@@ -32,6 +32,7 @@ public class HRController {
 	public String memberInfo(@RequestParam("memberNo") int memberNo, Model model) throws SQLException {
 		System.out.println(memberNo);
 		model.addAttribute("memberInfo",hrSerivce.findMemberInfoByNo(memberNo));
+		
 		return "/hr/memberInfo";
 	}
 	@GetMapping("/schedule")

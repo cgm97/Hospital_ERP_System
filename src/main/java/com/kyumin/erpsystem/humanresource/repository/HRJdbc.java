@@ -62,7 +62,14 @@ public class HRJdbc implements HRRepository{
 		
 		Member dto = new Member();
 		if (rs.next()) {
-			dto.setName(rs.getString("NAME"));
+			dto.setMemberNo(rs.getInt("memberNo"));
+			dto.setName(rs.getString("name"));
+			dto.setDepartment(rs.getString("department"));
+			dto.setRank(rs.getString("rank"));
+			dto.setJoinDate(rs.getString("joinDate"));
+			dto.setSalary(rs.getInt("salary"));
+			dto.setPayment(rs.getInt("payment"));
+			dto.setPhone(rs.getString("phone"));
 		}
 		return dto;
 	}

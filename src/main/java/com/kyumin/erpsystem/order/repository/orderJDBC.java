@@ -26,11 +26,11 @@ public class orderJDBC implements orderRepository {
 	
 	@Override
 	public order findbyDrugName(String drugName) throws SQLException {
-		String sql = "select * from item WHERE NAME=?";
+		String sql = "select * from item WHERE NAME LIKE ?";
 		conn = dataSource.getConnection();
 		
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, drugName);
+		pstmt.setString(1, "%" + drugName + "%");
 		rs = pstmt.executeQuery();
 		
 		order dto = new order();
