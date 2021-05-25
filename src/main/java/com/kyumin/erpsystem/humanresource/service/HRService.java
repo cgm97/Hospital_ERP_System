@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kyumin.erpsystem.humanresource.domain.Member;
+import com.kyumin.erpsystem.humanresource.domain.Salary;
 import com.kyumin.erpsystem.humanresource.repository.HRRepository;
 
 @Service
@@ -21,6 +22,12 @@ public class HRService {
 
 	public Member findMemberInfoByNo(int memberNo) throws SQLException {
 		return dao.findMemberInfoByNo(memberNo);
+	}
+
+	public List<Salary> findMemberSalaryList(String name) throws SQLException {
+		int memberNo = dao.findMemberNoByName(name);
+		
+		return dao.findMemberSalaryList(memberNo);
 	}
 	
 	

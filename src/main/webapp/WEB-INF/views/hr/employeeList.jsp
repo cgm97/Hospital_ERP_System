@@ -25,7 +25,6 @@
 					      <th scope="col">부서</th>
 					      <th scope="col">직급</th>
 					      <th scope="col">입사 날짜</th>
-					      <th scope="col">연봉</th>
 					      <th scope="col">급여 지급 여부</th>					
 					    </tr>
 			    	</thead>
@@ -36,13 +35,14 @@
 							<td>${memberList.getPhone()}</td>
 							<td>${memberList.getDepartment()}</td>
 							<td>${memberList.getRank()}</td>
-							<td>${memberList.getJoinDate()}</td>
-							<td>${memberList.getSalary()}</td>							
+							<td>${memberList.getJoinDate()}</td>						
 							<td>
 								<c:if test="${memberList.getPayment() eq 1 }">
 									<b style="color:green; text-align: center;">O</b>
 								</c:if>
-								<b style="color:red; text-align: center;">X</b>
+								<c:if test="${memberList.getPayment() eq 0 }">
+									<b style="color:green; text-align: center;">X</b>
+								</c:if>
 							</td>
 						</tr>	
 					</c:forEach>
