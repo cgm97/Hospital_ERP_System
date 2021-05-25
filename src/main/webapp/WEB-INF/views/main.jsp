@@ -104,8 +104,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                미처리 발주 요청</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1개</div>
+                                               처리 대기중인 발주</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${waitOrderCount}개</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>

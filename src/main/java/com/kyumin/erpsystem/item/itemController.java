@@ -41,6 +41,7 @@ public class itemController {
 		if (drugInfo != null) {
 			map.put("code", drugInfo.getCode());
 			map.put("type", drugInfo.getType());
+			map.put("name", drugInfo.getName());
 		}
 		else {
 			map = null;
@@ -63,7 +64,7 @@ public class itemController {
 	 * 기계 목록
 	 */
 	@GetMapping("/machineList")
-	public String machineList(Model model) {
+	public String machineList(Model model) throws SQLException {
 		model.addAttribute("machineList", itemService.findAllMachineList());
 		// DB 처리 부분만 남음
 		return "/item/machine";

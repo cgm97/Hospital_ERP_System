@@ -5,7 +5,7 @@
 <html>
 <jsp:include page="/WEB-INF/views/details/headTag.jsp" />
 <body id="page-top">
-
+	<script src='<c:url value="/js/hrAjax.js" />'></script>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -18,6 +18,11 @@
             <!-- Main Content -->
             <div id="content">
              	<h1>급여 관리</h1>
+             	<input type="text" id="name" name="name" placeholder="검색 할 직원 이름 입력"/>
+             	<button onclick="searchSalary();">검색</button>
+             	<table id="salaryTable" border="1" bordercolor="blue" width ="600" height="200" align = "center" >	
+	            
+				</table>
             </div>
             <!-- End of Main Content -->
 

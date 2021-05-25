@@ -26,20 +26,20 @@ public class itemService {
 		return dao.findByDrugName(drugName);
 	}
 
-	public List<machineDTO> findAllMachineList() {
-		List<machineDTO> machineList = new ArrayList<machineDTO>();
-		for (int i=0; i<3; i++) {
-			machineDTO info = new machineDTO();
-			info.setCode(111);
-			info.setName("장남감");
-			info.setLocation("우리집");
-			info.setDepartment("간호병동");
-			info.setBuyDate("2021/02/01");
-			info.setInspectionDate("2021/05/02");
-			machineList.add(info);
-		}
+	public List<machineDTO> findAllMachineList() throws SQLException {
+//		List<machineDTO> machineList = new ArrayList<machineDTO>();
+//		for (int i=0; i<3; i++) {
+//			machineDTO info = new machineDTO();
+//			info.setCode(111);
+//			info.setName("장남감");
+//			info.setLocation("우리집");
+//			info.setDepartment("간호병동");
+//			info.setBuyDate("2021/02/01");
+//			info.setInspectionDate("2021/05/02");
+//			machineList.add(info);
+//		}
 				
-		return machineList;
+		return dao.findAllMachineList();
 	}
 
 	public List<inventoryDTO> findAllInventoryList() throws SQLException {

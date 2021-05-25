@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kyumin.erpsystem.item.domain.inventoryDTO;
 import com.kyumin.erpsystem.item.domain.itemUse;
+import com.kyumin.erpsystem.item.domain.machineDTO;
 
 @Repository
 public class ItemJDBC implements ItemRepository {
@@ -73,14 +74,37 @@ public class ItemJDBC implements ItemRepository {
 		pstmt.close();
 		return list;
 	}
+	
+	@Override
+	public List<machineDTO> findAllMachineList() throws SQLException {
+		String sql = "select * from MACHINE";
+		conn = dataSource.getConnection();
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		
+		List<machineDTO> list = new ArrayList<machineDTO>();
+		while(rs.next()) {
+			machineDTO dto = new machineDTO();
+			dto.setCode(rs.getInt("CODE"));
+			dto.setName(rs.getString("NAME"));
+			dto.setLocation(rs.getString("location"));
+			dto.setDepartment(rs.getString("DEPARTMENT"));
+			dto.setBuyDate(rs.getString("buydate"));
+			dto.setInspectionDate(rs.getString("inspectionDate"));
+			list.add(dto);
+		}
+		conn.close();
+		pstmt.close();
+		return list;
+	}
 
 	@Override
-	public itemUse findByDrugName(String durgName) throws SQLException {
-		String sql = "select * from ITEM WHERE NAME=?";
+	public itemUse findByDrugName(String drugName) throws SQLException {
+		String sql = "select * from ITEM WHERE NAME LIKE ?";
 		conn = dataSource.getConnection();
 		
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, durgName);
+		pstmt.setString(1, "%" + drugName + "%");
 		rs = pstmt.executeQuery();
 		
 		itemUse dto = new itemUse();
@@ -93,5 +117,7 @@ public class ItemJDBC implements ItemRepository {
 		pstmt.close();
 		return dto;
 	}
+
+
 
 }

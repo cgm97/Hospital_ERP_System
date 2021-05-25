@@ -33,7 +33,7 @@
     <scriptsrc='<c:url value="/vendor/chart.js/Chart.min.js" />'></script>
     
     <!-- 커스텀 JS -->
-    <script src='<c:url value="/js/itemAjax.js" />'></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
