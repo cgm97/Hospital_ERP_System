@@ -7,7 +7,6 @@ public class Member {
 	private String department;
 	private String rank;
 	private String joinDate;
-	private int salary;
 	private int payment;
 	/**
 	 * @return the memberNo
@@ -70,18 +69,6 @@ public class Member {
 		this.joinDate = joinDate;
 	}
 	/**
-	 * @return the salary
-	 */
-	public int getSalary() {
-		return salary;
-	}
-	/**
-	 * @param salary the salary to set
-	 */
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-	/**
 	 * @return the payment
 	 */
 	public int getPayment() {
@@ -106,13 +93,5 @@ public class Member {
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Member [memberNo=" + memberNo + ", name=" + name + ", department=" + department + ", rank=" + rank
-				+ ", joinDate=" + joinDate + ", salary=" + salary + ", payment=" + payment + "]";
 	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.kyumin.erpsystem.humanresource.domain.Member;
 import com.kyumin.erpsystem.humanresource.domain.Salary;
+import com.kyumin.erpsystem.humanresource.domain.Schedule;
 
 public interface HRRepository {
 	
@@ -16,6 +17,14 @@ public interface HRRepository {
 	int findMemberNoByName(String name)throws SQLException;
 	// 검색된 사원의 급여 조회
 	List<Salary> findMemberSalaryList(int memberNo) throws SQLException;
+	// 현재 재직중인 직원 수
+	int getMemberCnt() throws SQLException;
+	// 근태기록 불러오기
+	List<Schedule> getScheduleListbyMemeberNo(int memeberNo) throws SQLException;
+	// 근무 기록 저장
+	int insertSchedule(Schedule schedule) throws SQLException;
+	// 클릭된 근무지 불러오기
+	Schedule getSchedulebyNo(int scheduleNo) throws SQLException;
 	
 
 	
